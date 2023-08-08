@@ -1,13 +1,16 @@
 # Furniture-Store
 
 
-Anuj Patel
+Anuj Patel-Login/signUp page
 
 
-Sanjeev Kushwaha
+Mandeep Rahar-HomePage
 
 
-Pankaj Singh
+Sanjeev Kushwaha-Product page,Product Description
 
 
-Mandeep Rahar
+Pankaj Singh-CartPage,Address Page,Payment Page
+
+
+
