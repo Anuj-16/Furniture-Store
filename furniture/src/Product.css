@@ -1,0 +1,69 @@
+.navTop {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.linkData {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+.otherData {
+  display: grid;
+  width: 72%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.linksStyle {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  padding: 10px;
+}
+.linksStyle p {
+  font-weight: 700;
+}
+.linksStyle img {
+  width: 350px;
+  height: 350px;
+}
+
+.othermain1 {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.othermain11 {
+
+  width: 17%;
+ height: 10%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  
+}
+
+.filter-by-category {
+  margin-left: 10px;
+  padding: 3px 10px;
+  margin-bottom: 10%;
+}
+.sorting-by-category {
+  margin-left: 10px;
+  padding: 3px 10px;
+  margin-bottom: 10%;
+}
+
+.label2{
+    margin-left: -15px;
+}
+
+.btn1{
+    margin-left: -40%;
+}
