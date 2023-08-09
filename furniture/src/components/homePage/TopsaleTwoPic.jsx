@@ -38,37 +38,37 @@ export default function CaptionCarousel() {
   const cards = [
     {
       title: 'Top Sale 30%',
-    //   text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+    
       image:
         'https://thesleepcompany.in/cdn/shop/products/01.jpg?v=1660739372&width=1445'
     },
     {
       title: 'Top Sale 40%',
-    //   text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+    
       image:
         'https://www.orangetreeeri.com/wp-content/uploads/2020/06/1-3-1.jpg',
     },
     {
       title: 'Top Sale 35%',
-    //   text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+    
       image:
         'https://ii2.pepperfry.com/media/catalog/product/s/t/1100x1210/style-breathable-mesh-ergonomic-chair-in-black-colour-style-breathable-mesh-ergonomic-chair-in-black-rglulo.jpg',
     },
     {
         title: 'Top Sale 35%',
-        // text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+       
         image:
           'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
       },
       {
         title: 'Top Sale 35%',
-        // text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+       
         image:
           'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
       },
       {
         title: 'Top Sale 35%',
-        // text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+        
         image:
           'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
       },
