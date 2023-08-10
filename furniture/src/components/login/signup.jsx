@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-export const signup = () => {
+export const Signup = () => {
 
+  const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const [sign, setSign] = useState({
+        name: "",
+        email: '',
+        password: ''
+    })
+
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
+      if (sign.email === '' || sign.name === '' || sign.password === '') {
+          
+          alert("fill all the field")
+          setSign({ ...sign, email: '', password: "" })
+          return
+      }
+      else{
+          // dispatch(clientName(sign.name))
+          axios.post(`https://myjson.onrender.com/users`, sign)
+          console.log(sign.name)
+          alert("Account Created Succesfully")
+          navigate('/login')
+          setSign({ ...sign, name: '', email: '', password: '' })
+      }
+    
+  };
 
 
   return (
@@ -28,25 +59,25 @@ export const signup = () => {
                         value={sign.email}
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
                 </div>
-                <div className="form-group abid-form-group">
-                    <label className="abid-label">Password</label>
+                <div className="form-group anuj-form-group">
+                    <label className="anuj-label">Password</label>
                     <input
                         type="password"
                         id="password"
                         name="password"
+                        className="anuj-input" />
                         value={sign.password}
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
-                        className="abid-input" />
                 </div>
-                <div className="form-group abid-form-group">
-                    <input type="submit" value="Sign Up" className="abid-submit-button" />
+                <div className="form-group anuj-form-group">
+                    <input type="submit" value="Sign Up" className="anuj-submit-button" />
                     <div className="abid-form-help-s">
-                        By signing up, you agree to our <Link id="abid-link-s">Terms of Service</Link> and <Link id="abid-link-s">Privacy Policy</Link>.
+                        By signing up, you agree to our <Link id="anuj-link-s">Terms of Service</Link> and <Link id="anuj-link-s">Privacy Policy</Link>.
                     </div>
                 </div>
             </form>
-            <div className="footer abid-footer">
-                Already have an account? <Link to={"/login"} id="abid-link">Sign In</Link>
+            <div className="footer anuj-footer">
+                Already have an account? <Link to={"/login"} id="anuj-link">Sign In</Link>
             </div>
         </div>
             <div>
