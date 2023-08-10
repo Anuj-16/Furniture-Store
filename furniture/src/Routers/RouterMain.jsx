@@ -6,6 +6,7 @@ import Table from '../files/Table';
 import Cases from '../files/Cases';
 import Lambs from '../files/Lambs';
 import Sofas from '../files/Sofas';
+import ProductDetails from '../components/ProductDetails';
 
 function RouterMain() {
   return (
@@ -13,9 +14,11 @@ function RouterMain() {
     <Route path="/"element={<Other/>}/>
     <Route path="/chair"element={<Chair/>}/>
     <Route path="/table"element={<Table/>}/>
-    <Route path="/cases"element={<Cases/>}/>
+    <Route path="/shelve"element={<Cases/>}/>
     <Route path="/lambs"element={<Lambs/>}/>
     <Route path="/sofas"element={<Sofas/>}/>
+    <Route path="/products/:id"element={<ProductDetails/>}/>
+
    
    </Routes>
   )

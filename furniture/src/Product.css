@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
+  padding: 10px;
 }
 .linkData {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -24,7 +25,12 @@
   width: 100%;
   padding: 10px;
 }
-.linksStyle p {
+.showd{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+}
+.showd p {
   font-weight: 700;
 }
 .linksStyle img {
@@ -66,4 +72,11 @@
 
 .btn1{
     margin-left: -40%;
+}
+.btnAtC{
+    padding: 0px 30px;
+    border: 0px;
+    background-color: rgb(255,159,0);
+    border-radius: 10px;
+    color: white;
 }

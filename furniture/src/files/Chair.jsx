@@ -48,14 +48,19 @@ function Chair() {
         </div>
       </div>
       <div className="otherData">
-        {data.map((el) => (
-          <Link className="linksStyle" to={`/products/${el.id}`}>
-            {imgChair?(<img src={el.img2} alt={el.title} />):(<img src={el.img1} alt={el.title} />)}
-            <h4 style={{ color: "blue" }}>{el.title}</h4>
+          {data.map((el) => (
+           <div className="linksStyle">
+                <Link style={{textDecoration:"none"}} to={`/products/${el.id}`}>
+              {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
+              <h4 style={{ color: "blue" }}>{el.title}</h4>
+            </Link>
+              <div className="showd">
             <p>Price: ₹ {el.price}</p>
-          </Link>
-        ))}
-      </div>
+            <button className="btnAtC">Add to Card</button>
+            </div>
+            </div>
+          ))}
+        </div>
     </div>
   );
 }

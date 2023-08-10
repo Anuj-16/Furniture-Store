@@ -8,7 +8,7 @@ function Nav1() {
         {path:"/",title:"Home"},
         {path:"/chair",title:"Chair"},
         {path:"/table",title:"Table"},
-        {path:"/cases",title:"Cases"},
+        {path:"/shelve",title:"Shelve"},
         {path:"/lambs",title:"Lambs"},
         {path:"/sofas",title:"Sofas"}
     ]

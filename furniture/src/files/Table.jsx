@@ -21,14 +21,14 @@ function Table() {
     return (
       <div className="othermain1">
         <div className="othermain11">
-          <label>
+          <label style={{marginLeft:"-30px"}}>
             Category :
             <select className="filter-by-category">
               <option value="">All Categories</option>
               <option value="sidetable">Side Table</option>
               <option value="laptoptable">Laptop Table</option>
-              <option value="outdoor">Outdoor Chair</option>
-              <option value="living">Living Room Chair</option>
+              <option value="coffeetables">Coffee Table</option>
+           
             </select>
           </label>
           <br />
@@ -49,11 +49,16 @@ function Table() {
         </div>
         <div className="otherData">
           {data.map((el) => (
-            <Link className="linksStyle" to={`/products/${el.id}`}>
-              {imgChair?(<img src={el.img2} alt={el.title} />):(<img src={el.img1} alt={el.title} />)}
+           <div className="linksStyle">
+                <Link style={{textDecoration:"none"}} to={`/products/${el.id}`}>
+              {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
               <h4 style={{ color: "blue" }}>{el.title}</h4>
-              <p>Price: ₹ {el.price}</p>
             </Link>
+              <div className="showd">
+            <p>Price: ₹ {el.price}</p>
+            <button className="btnAtC">Add to Card</button>
+            </div>
+            </div>
           ))}
         </div>
       </div>
