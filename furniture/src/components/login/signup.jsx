@@ -9,8 +9,8 @@ export const Signup = () => {
 
     const [sign, setSign] = useState({
         name: "",
-        email: '',
-        password: ''
+        email: "",
+        password: ""
     })
 
 
@@ -18,13 +18,11 @@ export const Signup = () => {
       e.preventDefault();
       
       if (sign.email === '' || sign.name === '' || sign.password === '') {
-          
           alert("fill all the field")
           setSign({ ...sign, email: '', password: "" })
           return
       }
       else{
-          // dispatch(clientName(sign.name))
           axios.post(`https://myjson.onrender.com/users`, sign)
           console.log(sign.name)
           alert("Account Created Succesfully")
@@ -36,7 +34,8 @@ export const Signup = () => {
 
 
   return (
-    <><div className="signup-container anuj-signup-container">
+    <>
+    <div className="signup-container anuj-signup-container">
             <h2 className="anuj-heading">Create an Account</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group anuj-form-group">
