@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+//import { useDispatch } from "react-redux";
+//import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 export const Signup = () => {
 
-  const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    const [sign, setSign] = useState({
+  //const navigate = useNavigate()
+    //const dispatch = useDispatch()
+    const initialState = {
         name: "",
         email: "",
         password: ""
-    })
+    }
+
+    const [sign, setSign] = useState(initialState)
 
 
     const handleSubmit = (e) => {
@@ -26,7 +29,7 @@ export const Signup = () => {
           axios.post(`https://myjson.onrender.com/users`, sign)
           console.log(sign.name)
           alert("Account Created Succesfully")
-          navigate('/login')
+          //navigate('/login')
           setSign({ ...sign, name: '', email: '', password: '' })
       }
     
