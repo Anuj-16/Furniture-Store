@@ -4,12 +4,12 @@ import CaptionCarousel1 from "./autoplayPics"
 import CaptionCarousel2 from './TopsaleTwoPic'
 import FourPicCarousel from './fourpic'
 import Footer from './footer'
-// import SecondNav22 from "./navbar"
+import SecondNav22 from "./navbar"
 function home() {
   
   return (
     <div>
-      {/* <SecondNav22></SecondNav22> */}
+      <SecondNav22></SecondNav22>
       <br />
       <br />
       <hr style={{border:"2px"}}></hr>
