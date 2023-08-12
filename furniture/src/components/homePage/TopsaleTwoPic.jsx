@@ -28,61 +28,63 @@ const settings = {
   centerMode: false,
   cssEase: 'linear',
   variableWidth: false,
-  slideWidth: `${100 / 2}%`, // Adjusted slide width with gap
+  slideWidth: `${100 / 4}%`, // Adjusted slide width with gap
   slideMargin: '1%', // Gap between the slides
 };
 
-export default function CaptionCarousel() {
+
+export default function CaptionCarousel2() {
   const [slider, setSlider] = React.useState(null);
 
   const cards = [
     {
-      title: 'Top Sale 30%',
+      title: 'Fancy Chair',
     
       image:
-        'https://thesleepcompany.in/cdn/shop/products/01.jpg?v=1660739372&width=1445'
+        'https://images.unsplash.com/photo-1606223226320-fc37669d0a4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80'
     },
     {
-      title: 'Top Sale 40%',
+      title: 'Red Chair',
     
       image:
-        'https://www.orangetreeeri.com/wp-content/uploads/2020/06/1-3-1.jpg',
+        'https://c4.wallpaperflare.com/wallpaper/999/860/38/tube-dog-chair-smokes-wallpaper-preview.jpg',
     },
     {
-      title: 'Top Sale 35%',
+      title: 'Modern chair',
     
       image:
-        'https://ii2.pepperfry.com/media/catalog/product/s/t/1100x1210/style-breathable-mesh-ergonomic-chair-in-black-colour-style-breathable-mesh-ergonomic-chair-in-black-rglulo.jpg',
+        'https://img-new.cgtrader.com/items/2436583/d54c9d440d/large/modern-chair-fancy-3d-model-max-obj-fbx-ma-hrc-cob.jpg',
     },
     {
-        title: 'Top Sale 35%',
+        title: ' leather chair',
        
         image:
-          'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
+          'https://www.ikea.com/ext/ingkadam/m/1eec13735071d520/original/PH193656.jpg?f=xl',
       },
       {
-        title: 'Top Sale 35%',
+        title: 'White Chair',
        
         image:
-          'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
+          'https://c1.wallpaperflare.com/preview/816/636/860/frog-chair-cozy-for-two.jpg',
       },
       {
-        title: 'Top Sale 35%',
+        title: 'Wood Chair',
         
         image:
-          'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
+          'https://c4.wallpaperflare.com/wallpaper/485/248/854/anime-girls-long-hair-school-uniform-schoolgirls-sitting-chair-anime-wallpaper-preview.jpg',
       },
+   
    
   ];
 
+
   return (
-    <Box position="relative" height="70vh" width="full" overflow="hidden">
-      <Slider {...settings} ref={setSlider}>
+    <Box position="relative"  width="full" overflow="hidden" >
+      <Slider {...settings} ref={setSlider} >
         {cards.map((card, index) => (
           <Box
             key={index}
-            height="500px"
-            gap="20px"
+            height="70vh"
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -90,36 +92,46 @@ export default function CaptionCarousel() {
             backgroundImage={`url(${card.image})`}
             boxShadow="0px 4px 8px rgba(0, 0, 0, 0.1)"
             borderRadius="8px"
+            
           >
+           
             <Container size="lg" height="400px" position="relative" maxWidth="1200px">
-              <Stack
-                spacing={6}
-                w="full"
-                maxW="lg"
-                position="absolute"
-                bottom="-10px"
-                transform="translate(0, -50%)"
-                textAlign="left"
-                paddingLeft="20px"
-              >
-                <Heading
-                  fontSize={{ base: '2xl', md: '3xl', lg: '2xl' }}
-                  color="#FFCC01"
-                  transform="rotate(-90deg)"
-                  transformOrigin="left bottom"
-                  whiteSpace="nowrap"
-                >
-                  {card.title}
-                </Heading>
-              </Stack>
+            <Stack
+  spacing={6}
+  w="full"
+  maxW="lg"
+  position="absolute"
+  bottom="5"
+  transform="translate(0, -50%)"
+  textAlign="left"
+  paddingLeft="40px"
+  as='b'
+>
+  <Heading
+    fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
+    color="gray" /* Change to the desired gray color */
+    transform="rotate(-90deg)"
+    transformOrigin="left bottom"
+    whiteSpace="nowrap"
+    fontWeight="bold"
+    fontStyle="italic"
+    opacity="0.6" /* Change to the desired opacity */
+  >
+    {card.title}
+  </Heading>
+</Stack>
+
             </Container>
           </Box>
         ))}
       </Slider>
-      <Box position="absolute" right="20px">
-        <Button onClick={() => slider?.slickPrev()}>Previous</Button>
-        <Button onClick={() => slider?.slickNext()}>Next</Button>
-      </Box>
+      {/* Adjust the positioning of the buttons */}
+      <Box position="absolute" top='94%' transform="translateY(-50%)" right="1px" >
+  <Button size="sm" onClick={() => slider?.slickPrev()}>Left</Button>
+  --
+  <Button size="sm" onClick={() => slider?.slickNext()}>Right</Button>
+</Box>
+
     </Box>
   );
 }
