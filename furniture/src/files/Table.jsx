@@ -56,7 +56,8 @@ function Table() {
             </Link>
               <div className="showd">
             <p>Price: ₹ {el.price}</p>
-            <button className="btnAtC">Add to Card</button>
+            <button className="btnAtC"><p>Add to Card</p></button>
+           
             </div>
             </div>
           ))}

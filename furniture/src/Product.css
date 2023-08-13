@@ -1,29 +1,44 @@
+body{
+  overflow-x: hidden;
+  width: 100%;
+}
 .navTop {
   margin: auto;
   display: flex;
+  background-color: rgb(249, 250, 251);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   justify-content: space-around;
   margin-top: 10px;
-  padding: 10px;
+  padding: 20px 10px;
 }
 .linkData {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: rgb(255, 0, 0);
   text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 7px;
 }
-
+.linkData:hover{
+  background-color: rgb(206, 233, 233);
+}
 .otherData {
   display: grid;
-  width: 72%;
+  width: 71%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
+  margin-left: 20%;
 }
 
 .linksStyle {
+  border-radius: 0px 27px 0px 27px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-decoration: none;
   color: black;
   width: 100%;
   padding: 10px;
+}
+.linksStyle:hover{
+  border: 1px solid black;
 }
 .showd{
     display: flex;
@@ -34,8 +49,8 @@
   font-weight: 700;
 }
 .linksStyle img {
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
 }
 
 .othermain1 {
@@ -44,12 +59,15 @@
   margin: auto;
   margin-top: 30px;
   margin-left: 20px;
+
 }
 
 .othermain11 {
+position: fixed;
+left: 20px;
 
-  width: 17%;
- height: 10%;
+  width: 16%;
+ height: 20%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px;
   
@@ -72,6 +90,14 @@
 
 .btn1{
     margin-left: -40%;
+}
+
+.btn1 >button:hover{
+  background-color: rgb(210, 174, 115);
+  border: none;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: white;
 }
 .btnAtC{
     padding: 0px 30px;
