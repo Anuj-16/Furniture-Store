@@ -14,7 +14,7 @@ function Sofas() {
 
     useEffect(() => {
       dispatch(getData("sofas"));
-    }, []);
+    }, [dispatch]);
   
   
   

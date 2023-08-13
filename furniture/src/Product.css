@@ -5,7 +5,7 @@ body{
 .navTop {
   margin: auto;
   display: flex;
-  background-color: rgb(249, 250, 251);
+  background-color: rgb(57, 144, 231);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   justify-content: space-around;
   margin-top: 10px;
@@ -17,9 +17,11 @@ body{
   text-decoration: none;
   padding: 5px 20px;
   border-radius: 7px;
+  background-color: azure;
 }
 .linkData:hover{
-  background-color: rgb(206, 233, 233);
+  color: white;
+  background-color: rgb(226, 76, 98);
 }
 .otherData {
   display: grid;
@@ -90,14 +92,16 @@ left: 20px;
 
 .btn1{
     margin-left: -40%;
+    border-radius: 17px;
 }
 
 .btn1 >button:hover{
-  background-color: rgb(210, 174, 115);
+  background-color: rgb(148, 178, 243);
   border: none;
   padding: 5px 10px;
   font-weight: 600;
   color: white;
+  border-radius: 7px;
 }
 .btnAtC{
     padding: 0px 30px;

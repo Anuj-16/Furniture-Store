@@ -13,7 +13,7 @@ function Chair() {
   console.log(data);
   useEffect(() => {
     dispatch(getData("chair"));
-  }, []);
+  }, [dispatch]);
 
 
 

@@ -14,7 +14,7 @@ function Cases() {
   console.log(data);
   useEffect(() => {
     dispatch(getData("shelve"));
-  }, []);
+  }, [dispatch]);
 
 
 

@@ -12,7 +12,7 @@ function Lambs() {
   console.log(data);
   useEffect(() => {
     dispatch(getData("lambs"));
-  }, []);
+  }, [dispatch]);
 
 
 

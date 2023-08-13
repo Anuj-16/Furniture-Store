@@ -6,18 +6,36 @@ import "../Product.css";
 import { Link } from "react-router-dom";
 
 function Table() {
-    const { data, setData,imgChair,setImgChair } = useContext(AuthContent);
+    const { data, setData,imgChair,setImgChair,store,setStore } = useContext(AuthContent);
     const dispatch = useDispatch();
     const { products } = useSelector((stre) => stre.reducer);
     setData(products);
     console.log(data);
     useEffect(() => {
       dispatch(getData("table"));
-    }, []);
+    }, [dispatch]);
   
   
-  
-  
+  const storeData=(el)=>{
+    if(store.length!==0){
+      let condi=store.filter((ele)=>{
+        return el.title===ele.title
+    })
+    console.log(condi)
+    if(condi.length>=1){
+      alert("item is already in cart")
+    }
+    else{
+      setStore([...store,el])
+    }
+
+    }else{
+       setStore([...store,el])
+    }
+
+   
+  }
+  console.log(store)
     return (
       <div className="othermain1">
         <div className="othermain11">
@@ -56,7 +74,7 @@ function Table() {
             </Link>
               <div className="showd">
             <p>Price: ₹ {el.price}</p>
-            <button className="btnAtC"><p>Add to Card</p></button>
+            <button className="btnAtC" onClick={()=>storeData(el)}><p>Add to Card</p></button>
            
             </div>
             </div>
