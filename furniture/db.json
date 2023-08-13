@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
   "products": [
     {
       "id": 1,
@@ -974,23 +974,3 @@
    
   ]
 }
-=======
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-}
->>>>>>> d9758b5ca688b41bc7b9f03750093e70aa2ac6f1
