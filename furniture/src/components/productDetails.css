@@ -1,0 +1,36 @@
+.prodtData {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 70px;
+
+  text-align: initial;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn3 {
+  padding: 5px 20px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.btn3:hover {
+  background-color: rgb(22, 186, 227);
+  border: none;
+}
+
+.AtC1 {
+  padding: 15px 70px;
+  margin-right: 10px;
+  margin-top: 30px;
+  background-color: #ff9f00;
+  border: none;
+
+}
+.AtS1 {
+  padding: 15px 70px;
+  margin-right: 10px;
+  margin-top: 30px;
+  background-color: #fb641b ;
+  border: none;
+}
