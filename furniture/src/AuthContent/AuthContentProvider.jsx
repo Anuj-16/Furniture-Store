@@ -5,9 +5,10 @@ function AuthContentProvider({children}) {
     const[categoryFilter,setCategoryFilter]=useState("");
     const[imgChair,setImgChair]=useState(false);
     const[store,setStore]=useState([]);
+    const[categ,setCateg]=useState("");
     console.log(imgChair)
   return (
-    <AuthContent.Provider value={{data,setData,categoryFilter,setCategoryFilter,imgChair,setImgChair,store,setStore}}>{children}</AuthContent.Provider>
+    <AuthContent.Provider value={{data,setData,categoryFilter,setCategoryFilter,imgChair,setImgChair,store,setStore,categ,setCateg}}>{children}</AuthContent.Provider>
   )
 }
 

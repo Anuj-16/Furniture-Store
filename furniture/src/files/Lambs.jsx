@@ -5,7 +5,7 @@ import { AuthContent } from "../AuthContent/AuthContentProvider";
 import "../Product.css";
 import { Link } from "react-router-dom";
 function Lambs() {
-  const { data, setData,imgChair,setImgChair } = useContext(AuthContent);
+  const { data, setData,imgChair,setImgChair,store,setStore } = useContext(AuthContent);
   const dispatch = useDispatch();
   const { products } = useSelector((stre) => stre.reducer);
   setData(products);
@@ -14,13 +14,31 @@ function Lambs() {
     dispatch(getData("lambs"));
   }, [dispatch]);
 
+  const storeData=(el)=>{
+    if(store.length!==0){
+      let condi=store.filter((ele)=>{
+        return el.title===ele.title
+    })
+    console.log(condi)
+    if(condi.length>=1){
+      alert("item is already in cart")
+    }
+    else{
+      setStore([...store,el])
+    }
 
+    }else{
+       setStore([...store,el])
+    }
+
+   
+  }
 
 
   return (
     <div className="othermain1">
       <div className="othermain11">
-        <label style={{marginLeft:"-30px"}}>
+        <label style={{marginLeft:""}}>
           Category :
           <select className="filter-by-category">
             <option value="">All Categories</option>
@@ -51,12 +69,14 @@ function Lambs() {
         {data.map((el) => (
          <div className="linksStyle">
               <Link style={{textDecoration:"none"}} to={`/products/${el.id}`}>
-            {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
+              <div className="box">
+             {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
+             </div>
             <h4 style={{ color: "blue" }}>{el.title}</h4>
           </Link>
             <div className="showd">
           <p>Price: ₹ {el.price}</p>
-          <button className="btnAtC"><p>Add to Card</p></button>
+          <button className="btnAtC"onClick={(el)=>storeData(el)}><p>Add to Card</p></button>
          
           </div>
           </div>
