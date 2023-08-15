@@ -24,7 +24,6 @@ function RouterMain() {
     <Route path='/login' element={<Login/>}/>
     <Route path='/sign_up' element={<SignUp/>}/>
 
-   
    </Routes>
   )
 }
