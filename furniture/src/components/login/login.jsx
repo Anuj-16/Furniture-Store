@@ -1,102 +1,45 @@
-import React, { useEffect, useState } from "react";
-import "./LogStyle.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import Footer from "../Home/Footer";
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthenticate } from "../../Redux/api";
-import { Authenticate, clientName, givePermmission } from "../../Redux/action";
-
+import React from 'react'
+import './Style.css';
 
 export const Login = () => {
 
 
-  const {  userArr } = useSelector((store) => {
-    return store
-  })
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  })
-  useEffect(() => {
-    dispatch(getUserAuthenticate())
-  }, [])
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (user.password === '' || user.email === '') {
-      alert("fill all the field")
-      setUser({ ...user, email: '', password: "" })
-      return
-    }
-    let flag=-1;
-    userArr.forEach((elem) => {
-      if (elem.email === user.email && elem.password === user.password) {
-        dispatch(clientName(elem.name))
-        flag = 0;
-      }
-    })
-
-    if (flag === 0) {
-      alert("Login Successfully!")
-     
-      dispatch(Authenticate("true"))
-      navigate('/')
-      dispatch(givePermmission(true))
-    } else {
-      alert("Wrong Credential!")
-    }
-    setUser({ ...user, email: '', password: "" })
-  };
-
-
+  
 
   
   return (
-    <>
-      <div className="login-container">
-        <h2>Sign-In</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email Id</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder='Please enter your email id'
-              value={user.email}
-              onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder='Please enter your password'
-              value={user.password}
-              onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })} />
-          </div>
-          <div className="form-group">
-            <input type="submit" value="Sign In" />
-            <div className="form-help">
-              <Link to="#">Forgot your password?</Link>
-              <Link style={{ marginLeft: "10px" }} to={'/signup'}>Back to SignUp</Link>
-            </div>
-          </div>
-        </form>
-      <div className="footer">
-        <Link to="#">Conditions of Use</Link> |{" "}
-        <Link to="#">Privacy Notice</Link> | <Link to="#">Help</Link>
-      </div>
+    <div class="main_div">
+    <div class="title">Login Form</div>
+    <div class="social_icons">
+      <a href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569900%7Cb%7Cface%20book%20log%20in%7C&placement=&creative=589460569900&keyword=face%20book%20log%20in&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221912%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-6167883633%26loc_physical_ms%3D1007824%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjwqZSlBhBwEiwAfoZUIM-tJmhVIDXIb9pn7G27SABd70_ZXYVdLQPShV47NqCJMIn6wLldoBoCUjoQAvD_BwE"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+      <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"><i class="fab fa-twitter"></i><span>Twitter</span></a>
     </div>
-      <div>
-        <Footer />
+    <form action="#">
+      <div class="input_box">
+        <input type="text" placeholder="Email or Phone" required id="login_email"/>
+        <div class="icon"><i class="fas fa-user"></i></div>
       </div>
-    </>
+      <div class="input_box">
+        <input type="password" placeholder="Password" required id="password"/>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox"/>
+          <span>Remember me</span>
+        </div>
+        <div class="forget_div">
+          
+        </div>
+      </div>
+      <div class="input_box button">
+        <input type="submit" value="Login"id="login"/>
+      </div>
+      <div class="sign_up">
+        Not a member? <a href="SignUp.html">Signup now</a>
+      </div>
+    </form>
+  </div>
+
   )
 }

@@ -1,5 +1,6 @@
 import axios from "axios"
-import { GET_DATA } from './actionType';
+import { AUTH, CLIENT_NAME, GET_DATA, PERMIT } from './actionType';
+
 
 
 
@@ -16,5 +17,28 @@ try{
     console.log("error")
 }
 
+}
+
+
+// FOR LOGIN AND SIGNUP
+
+export const Authenticate=(payload)=>{
+    return{
+        type:AUTH,
+        payload
+    }
+}
+export const clientName=(payload)=>{
+    return{
+        type: CLIENT_NAME,
+        payload
+    }
+}
+
+export const  givePermmission=(payload)=>{
+return{
+    type:PERMIT,
+    payload
+}
 }
 

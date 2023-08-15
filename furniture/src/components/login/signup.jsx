@@ -1,91 +1,89 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import './LogStyle.css'
-//import { useDispatch } from "react-redux";
-//import { useNavigate } from "react-router-dom";
-import axios from 'axios'
+import './Style1.css';
 
-export const Signup = () => {
+export const SignUp = () => {
 
-  //const navigate = useNavigate()
-    //const dispatch = useDispatch()
-    const initialState = {
-        name: "",
-        email: "",
-        password: ""
+    const[arr,setArr]=useState([])
+    const[log,setLog]=useState({
+      name:"",
+      email:"",
+      phone:"",
+      password:"",
+    })
+    console.log(log)
+
+    const saveData =(e)=>{
+        e.preventDefault()
+     let logData=arr.filter((el)=>{
+       return el.email===log.email||el.phone===log.phone
+     })
+     if(logData.length>=1){
+        alert("All ready register")
+     }else{
+        setArr([...arr,log])
+        alert("Successfully")
+     }
     }
-
-    const [sign, setSign] = useState(initialState)
-
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      
-      if (sign.email === '' || sign.name === '' || sign.password === '') {
-          alert("fill all the field")
-          setSign({ ...sign, email: '', password: "" })
-          return
-      }
-      else{
-          axios.post(`https://myjson.onrender.com/users`, sign)
-          console.log(sign.name)
-          alert("Account Created Succesfully")
-          //navigate('/login')
-          setSign({ ...sign, name: '', email: '', password: '' })
-      }
-    
-  };
+    console.log(arr)
 
 
   return (
-    <>
-    <div className="signup-container anuj-signup-container">
-            <h2 className="anuj-heading">Create an Account</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group anuj-form-group">
-                    <label htmlFor="name" className="anuj-label">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="anuj-input" />
-                        value={sign.name}
-                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
-                </div>
-                <div className="form-group anuj-form-group">
-                    <label className="anuj-label">Email Id</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="anuj-input" />
-                        value={sign.email}
-                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
-                </div>
-                <div className="form-group anuj-form-group">
-                    <label className="anuj-label">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        className="anuj-input" />
-                        value={sign.password}
-                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
-                </div>
-                <div className="form-group anuj-form-group">
-                    <input type="submit" value="Sign Up" className="anuj-submit-button" />
-                    <div className="abid-form-help-s">
-                        By signing up, you agree to our <Link id="anuj-link-s">Terms of Service</Link> and <Link id="anuj-link-s">Privacy Policy</Link>.
-                    </div>
-                </div>
-            </form>
-            <div className="footer anuj-footer">
-                Already have an account? <Link to={"/login"} id="anuj-link">Sign In</Link>
-            </div>
+    <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form onSubmit={saveData}>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" id="name"name="name"value={log.name} required onChange={(e)=>setLog({...log, [e.target.name]:e.target.value})}/>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required/>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" id="email" name="email"value={log.email} required onChange={(e)=>setLog({...log, [e.target.name]:e.target.value})}/>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="phone"value={log.phone} required onChange={(e)=>setLog({...log, [e.target.name]:e.target.value})}/>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password"id="password" name="password"value={log.password} required onChange={(e)=>setLog({...log, [e.target.name]:e.target.value})} />
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" required id="conform-password"/>
+          </div>
         </div>
-            <div>
-                {/* <Footer /> */}
-            </div>
-        </>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1"/>
+          <input type="radio" name="gender" id="dot-2"/>
+          <input type="radio" name="gender" id="dot-3"/>
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Trans-gender</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register"id="register"/>
+        </div>
+      </form>
+      Already a member? <a href="SignIn.html">SignIn</a>
+    </div>
+  </div>
   )
 }
