@@ -1,11 +1,11 @@
-body{
+body {
   overflow-x: hidden;
   width: 100%;
 }
 .navTop {
   margin: auto;
   display: flex;
-  background-color: rgb(57, 144, 231);
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   justify-content: space-around;
   margin-top: 10px;
@@ -19,7 +19,7 @@ body{
   border-radius: 7px;
   background-color: azure;
 }
-.linkData:hover{
+.linkData:hover {
   color: white;
   background-color: rgb(226, 76, 98);
 }
@@ -27,8 +27,8 @@ body{
   display: grid;
   width: 71%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-left: 20%;
+  gap: 70px 20px;
+  margin-left: 2%;
 }
 
 .linksStyle {
@@ -38,14 +38,20 @@ body{
   color: black;
   width: 100%;
   padding: 10px;
+  position: relative;
+  height: 110%;
 }
-.linksStyle:hover{
+.linksStyle:hover {
   border: 1px solid black;
 }
-.showd{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 0px;
+.showd {
+  width: 84%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+  position: absolute;
+  top: 90%;
+  left: 10%;
 }
 .showd p {
   font-weight: 700;
@@ -59,20 +65,18 @@ body{
   display: flex;
   width: 100%;
   margin: auto;
-  margin-top: 30px;
-  margin-left: 20px;
-
+  margin: 30px 0px 70px 20px;
 }
 
 .othermain11 {
-position: fixed;
-left: 20px;
+  position: sticky;
+  top: 40px;
+  left: 20px;
 
-  width: 16%;
- height: 20%;
+  width: 20%;
+  height: 23%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px;
-  
 }
 
 .filter-by-category {
@@ -86,16 +90,16 @@ left: 20px;
   margin-bottom: 10%;
 }
 
-.label2{
-    margin-left: -15px;
+.label2 {
+  margin-left: -1px;
 }
 
-.btn1{
-    margin-left: -40%;
-    border-radius: 17px;
+.btn1 {
+  margin-left: 14%;
+  border-radius: 17px;
 }
 
-.btn1 >button:hover{
+.btn1 > button:hover {
   background-color: rgb(148, 178, 243);
   border: none;
   padding: 5px 10px;
@@ -103,10 +107,416 @@ left: 20px;
   color: white;
   border-radius: 7px;
 }
-.btnAtC{
-    padding: 0px 30px;
-    border: 0px;
-    background-color: rgb(255,159,0);
-    border-radius: 10px;
-    color: white;
+.btnAtC {
+  padding: 7px 30px;
+  border: 0px;
+  background-color: rgb(255, 159, 0);
+  border-radius: 10px;
+  color: white;
 }
+
+.box {
+  overflow: hidden;
+}
+
+.box img {
+  transition: all ease 2s;
+}
+.box:hover img {
+  scale: 1.2;
+}
+
+.homebox {
+  width: 90%;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+  margin: auto;
+  margin-top: 30px;
+  margin-right: 6.7%;
+}
+
+.box1 {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 30px;
+  border-radius: 0px 50px 0px 50px;
+}
+.box1:hover {
+  border: 2px solid rgb(226, 109, 109);
+}
+.box1 h1 {
+  color: rgb(101, 92, 227);
+  margin-top: 10px;
+}
+.imgbox1 img {
+  width: 400px;
+  height: 400px;
+}
+
+.imgbox1 {
+  overflow: hidden;
+}
+
+.imgbox1 img {
+  transition: all ease 2s;
+}
+.imgbox1:hover img {
+  scale: 1.2;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+  .homebox {
+    margin-left: 5%;
+  }
+  .imgbox1 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  /* .abid-footer-container{
+    margin-top: 14%;
+  } */
+}
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .homebox {
+    margin-left: 5%;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgbox1 img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .homebox {
+    margin-left: 5%;
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imgbox1 img {
+    width: 100%;
+    height: 100%;
+  }
+  .linkData {
+    padding: 5px 10px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px) {
+  .box img {
+    width: 100%;
+   
+  }
+  .label2{
+    margin-left: 12px;
+  }
+  .otherData{
+    margin-left: 4%;
+    gap: 4% 20px;
+    margin-bottom: 46%;
+  }
+  .lebal1{
+    margin-left: 6%;
+  }
+  .linksStyle{
+    height: 120%;
+  }
+  .showd{
+    top: 82%;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .otherData{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+  }
+  .lebal1{
+    margin-left: 6%;
+  }
+  .label2{
+    margin-left: 12px;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1009px) {
+  .otherData{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+  }
+  .lebal1{
+ 
+    margin-left: 6%;
+  }
+  .label2{
+    margin-left: 12px;
+  }
+  .othermain1{
+    display: block;
+  }
+  .othermain11{
+    display: flex;
+    justify-content: space-around;
+    left: 22%;
+    padding: 3% 25%;
+    padding-right: 30%;
+    margin-bottom: 7%;
+    position: relative;
+    margin-top: -4%;
+   
+  }
+  .linksStyle{
+    margin-left: -8%;
+  }
+  .btn1{
+    display: flex;
+   
+  }
+  .btn1 button{
+    margin-left: 8%;
+    padding: 1% 10%;
+  }
+}
+@media only screen and (min-width: 830px) and (max-width: 900px) {
+  .otherData{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    margin-right: 21%;
+    text-align: center;
+  }
+  .lebal1{
+ 
+    margin-left: 6%;
+  }
+ 
+  
+  .label2{
+    margin-left: 12px;
+  }
+  .othermain1{
+    display: block;
+  }
+  .othermain11{
+    display: flex;
+    justify-content: space-around;
+    left: 22%;
+    padding: 3% 25%;
+    padding-right: 30%;
+    margin-bottom: 7%;
+    position: relative;
+    margin-top: -4%;
+   
+  }
+  .linksStyle{
+    margin-left: -8%;
+  }
+  .btn1{
+    display: flex;
+   
+  }
+  .btn1 button{
+    margin-left: 8%;
+    padding: 1% 10%;
+  }
+}
+@media only screen and (min-width: 785px) and (max-width: 830px) {
+  .otherData{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    
+    text-align: center;
+  }
+  .lebal1{
+ 
+    margin-left: 6%;
+  }
+  
+  .label2{
+    margin-left: 12px;
+  }
+  .othermain1{
+    display: block;
+  }
+  .othermain11{
+    display: flex;
+    justify-content: space-around;
+    left: 17%;
+    padding: 3% 25%;
+    padding-right: 30%;
+    margin-bottom: 7%;
+    position: relative;
+    margin-top: -4%;
+   
+  }
+  .linksStyle{
+    margin-left: -8%;
+  }
+  .btn1{
+    display: flex;
+   
+  }
+  .btn1 button{
+    margin-left: 8%;
+    padding: 1% 10%;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 784px) {
+  .otherData{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin: auto;
+   
+    text-align: center;
+  }
+  .lebal1{
+ 
+    margin-left: 6%;
+  }
+  
+  .label2{
+    margin-left: 12px;
+  }
+ 
+}
+
+@media only screen and (min-width: 785px) and (max-width: 830px) {
+  .otherData{
+   
+    margin-right: 24%;
+  
+  }
+}
+@media only screen and (min-width: 635px) and (max-width: 784px) {
+  .othermain1{
+    display: block;
+  }
+  .othermain11{
+    display: flex;
+    justify-content: space-around;
+    left: 10%;
+    padding: 3% 38%;
+    padding-left: 30%;
+    padding-right: 38%;
+    margin-bottom: 7%;
+    position: relative;
+    margin-top: -4%;
+   
+  }
+  .linksStyle{
+    margin-left: -8%;
+  }
+  .btn1{
+    display: flex;
+   
+  }
+  .btn1 button{
+    margin-left: 8%;
+    padding: 1% 10%;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 634px) {
+  .othermain1{
+    display: block;
+  }
+
+.othermain11{
+  position: static;
+  width: 46%;
+  margin-bottom: 4%;
+  margin-left: 27%;
+}
+.box img{
+  width: 300px;
+  height: 300px;
+}
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 449px) {
+  .othermain1{
+    display: block;
+  }
+.otherData{
+  margin-right: 21%;
+}
+.othermain11{
+  position: static;
+  width: 63%;
+  margin-bottom: 4%;
+  margin-left: 12%;
+  
+}
+.box img{
+  width: 200px;
+  height: 200px;
+}
+.linksStyle{
+  height: 120%;
+}
+.showd{
+  top: 84%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

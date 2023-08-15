@@ -1,5 +1,3 @@
 export const GET_DATA="GET_DATA";
-
-export const AUTH = 'AUTH'
-export const PERMIT = 'PERMIT'
-export const CLIENT_NAME = 'CLIENT_NAME'
+export const FILTER_DATA="FILTER";
+export const PRICE_DATA="PRICE_DATA";

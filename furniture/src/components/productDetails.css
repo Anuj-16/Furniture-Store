@@ -34,3 +34,87 @@
   background-color: #fb641b ;
   border: none;
 }
+.title{
+  color: blue;
+  margin-bottom: 10px;
+}
+.price{
+  font-weight: 700;
+  margin-bottom: 15px;
+  
+}
+.imgBox{
+  padding-right: 50px;
+
+}
+.imgBox img{
+  transition:  all ease 2s;
+}
+.imgBox:hover img{
+  scale: 1.2;
+}
+
+@media only screen and (min-width: 883px) and (max-width: 1200px) {
+
+  .prodtData{
+    display: block;
+    margin: auto;
+  }
+  .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
+
+  
+  }
+
+  @media only screen and (min-width: 720px) and (max-width: 883px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 300px;
+    }
+    .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
+    
+    }
+  @media only screen and (min-width: 575px) and (max-width: 720px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px;
+    }
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
+    
+    }
+  @media only screen and (min-width: 200px) and (max-width: 575px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px
+    }
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
+    
+    }
+

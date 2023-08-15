@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../redux/action";
+import { filterVal, getData, priceFilter } from "../redux/action";
 import { AuthContent } from "../AuthContent/AuthContentProvider";
 import "../Product.css";
 import { Link } from "react-router-dom";
 
 function Chair() {
-  const { data, setData,imgChair,setImgChair } = useContext(AuthContent);
+  const { data, setData,imgChair,setImgChair,store,setStore } = useContext(AuthContent);
   const dispatch = useDispatch();
   const { products } = useSelector((stre) => stre.reducer);
   setData(products);
@@ -15,26 +15,53 @@ function Chair() {
     dispatch(getData("chair"));
   }, [dispatch]);
 
+  const storeData=(el)=>{
+    if(store.length!==0){
+      let condi=store.filter((ele)=>{
+        return el.title===ele.title
+    })
+    console.log(condi)
+    if(condi.length>=1){
+      alert("item is already in cart")
+    }
+    else{
+      setStore([...store,el])
+    }
 
+    }else{
+       setStore([...store,el])
+    }
+}
 
-
+const filterData=(e)=>{
+  e.preventDefault()
+   
+    dispatch(filterVal("table",e.target.value))
+    
+   
+  }
+  const priceData =(e)=>{
+    e.preventDefault()
+     
+      dispatch(priceFilter("table",e.target.value))
+      }
   return (
     <div className="othermain1">
       <div className="othermain11">
-        <label>
+        <label className="lebal1">
           Category :
-          <select className="filter-by-category">
+          <select className="filter-by-category"onChange={filterData}>
             <option value="">All Categories</option>
             <option value="office">Office</option>
             <option value="gamming">Gamming</option>
             <option value="outdoor">Outdoor Chair</option>
-            <option value="living">Living Room Chair</option>
+            <option value="living">Room Chair</option>
           </select>
         </label>
         <br />
         <labe className="label2">
           Price Sorting :
-          <select className="sorting-by-category" >
+          <select className="sorting-by-category" onChange={priceData}>
             <option value="">All Soting</option>
             <option value="asc">Low to high</option>
             <option value="desc">High to low</option>
@@ -51,12 +78,14 @@ function Chair() {
           {data.map((el) => (
            <div className="linksStyle">
                 <Link style={{textDecoration:"none"}} to={`/products/${el.id}`}>
-              {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
-              <h4 style={{ color: "blue" }}>{el.title}</h4>
+                <div className="box">
+             {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
+             </div>
+              <h4 style={{ color: "gray" }}>{el.title}</h4>
             </Link>
               <div className="showd">
             <p>Price: ₹ {el.price}</p>
-            <button className="btnAtC">Add to Card</button>
+            <button className="btnAtC" onClick={(el)=>storeData(el)}>Add to Card</button>
             </div>
             </div>
           ))}

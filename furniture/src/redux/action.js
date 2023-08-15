@@ -1,6 +1,5 @@
 import axios from "axios"
-import { AUTH, CLIENT_NAME, GET_DATA, PERMIT } from './actionType';
-
+import { FILTER_DATA, GET_DATA, PRICE_DATA } from './actionType';
 
 
 
@@ -10,7 +9,7 @@ export const getData=(cate)=>async(dispatch)=>{
 
 
 try{
-   let result=await axios(`${urlData}?category=${cate}`);
+   let result=await axios.get(`${urlData}?category=${cate}`);
  
     dispatch({type:GET_DATA,payload:result.data});
 }catch(err){
@@ -19,26 +18,33 @@ try{
 
 }
 
-
-// FOR LOGIN AND SIGNUP
-
-export const Authenticate=(payload)=>{
-    return{
-        type:AUTH,
-        payload
-    }
+export const filterVal=(cate,name,price)=>async(dispatch)=>{
+    try{
+      if(name){
+        let result=await axios.get(`${urlData}?type=${name}`);
+ 
+        dispatch({type:FILTER_DATA,payload:result.data});
+      }else{
+         let result=await axios.get(`${urlData}?category=${cate}`);
+ 
+    dispatch({type:FILTER_DATA,payload:result.data})
+      }
+           
+    }catch(err){}
 }
-export const clientName=(payload)=>{
-    return{
-        type: CLIENT_NAME,
-        payload
-    }
+export const priceFilter=(cate,price)=>async(dispatch)=>{
+    try{
+    
+        if(price){
+          let result=await axios.get(`${urlData}?_sort=price&_order=${price}&category=${cate}`);
+ 
+        dispatch({type:PRICE_DATA,payload:result.data});
+        }else{
+          let result=await axios.get(`${urlData}?&category=${cate}`);
+ 
+        dispatch({type:PRICE_DATA,payload:result.data});
+        }
+      
+           
+    }catch(err){}
 }
-
-export const  givePermmission=(payload)=>{
-return{
-    type:PERMIT,
-    payload
-}
-}
-
