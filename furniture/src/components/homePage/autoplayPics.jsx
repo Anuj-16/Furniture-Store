@@ -26,32 +26,32 @@ export default function CaptionCarousel1() {
   const cards = [
     {
       title: 'Top Sale 30%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: " Sofas come in a wide range of designs, styles, and sizes to suit different preferences and interior décors. Common styles include traditional, modern, contemporary, and sectional sofas.",
       image: 'https://r4.wallpaperflare.com/wallpaper/488/747/592/design-sofa-interior-pillow-living-room-hd-wallpaper-ca55f017f3cfefbcd3b62ab971524250.jpg',
     },
     {
       title: 'Top Sale 40%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: " Sofas can be made from various materials, including fabric, leather, faux leather, and more. The choice of material affects the sofa's comfort, appearance, and durability.",
       image: 'https://r4.wallpaperflare.com/wallpaper/358/102/370/star-wars-lego-star-wars-stormtrooper-couch-wallpaper-e251e260fd560e3b5ab85265d0e83912.jpg',
     },
     {
       title: 'Top Sale 35%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: " Sofas can be made from various materials, including fabric, leather, faux leather, and more. The choice of material affects the sofa's comfort, appearance, and durability.",
       image: 'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
     },
     {
       title: 'Top Sale 35%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: "These smaller tables are placed beside sofas or beds to hold items like lamps, remote controls, or beverages",
       image: 'https://c1.wallpaperflare.com/path/675/259/577/chair-clean-desk-interior-1543a84710f39edeac2bc7c5f49756cb.jpg',
     },
     {
       title: 'Top Sale 35%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: "Laptop tables are lower tables designed to be placed in front of a sofa or seating area. They're often used to hold items like drinks, books, or decorations.",
       image: 'https://c1.wallpaperflare.com/path/325/617/134/computer-keyboard-apple-electronics-5f6c98e13ee8d6f4043792b53338fef9.jpg',
     },
     {
       title: 'Top Sale 35%',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      text: " Desks are work surfaces used for tasks like writing, computer work, or studying. They can vary in size and design, catering to different needs.",
       image: 'https://r4.wallpaperflare.com/wallpaper/577/981/311/orange-sofa-interior-pillow-wallpaper-06e896573d724ccaf834ba7dcc641c8b.jpg',
     },
   ];
