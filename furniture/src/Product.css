@@ -27,8 +27,9 @@ body{
   display: grid;
   width: 71%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-left: 20%;
+  gap: 70px 20px;
+  margin-left: 2%;
+  
 }
 
 .linksStyle {
@@ -38,14 +39,20 @@ body{
   color: black;
   width: 100%;
   padding: 10px;
+  position: relative;
+  height: 110%;
 }
 .linksStyle:hover{
   border: 1px solid black;
 }
 .showd{
+  width: 84%;
     display: flex;
     justify-content: space-around;
     margin-top: 0px;
+    position: absolute;
+    top: 90%;
+    left: 10%;
 }
 .showd p {
   font-weight: 700;
@@ -59,17 +66,18 @@ body{
   display: flex;
   width: 100%;
   margin: auto;
-  margin-top: 30px;
-  margin-left: 20px;
+  margin: 30px 0px 70px 20px;
+ 
 
 }
 
 .othermain11 {
-position: fixed;
+position: sticky;
+top: 40px;
 left: 20px;
 
-  width: 16%;
- height: 20%;
+  width: 20%;
+ height: 23%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px;
   
@@ -87,11 +95,11 @@ left: 20px;
 }
 
 .label2{
-    margin-left: -15px;
+    margin-left: -1px;
 }
 
 .btn1{
-    margin-left: -40%;
+    margin-left: 14%;
     border-radius: 17px;
 }
 
@@ -104,9 +112,34 @@ left: 20px;
   border-radius: 7px;
 }
 .btnAtC{
-    padding: 0px 30px;
+    padding: 7px 30px;
     border: 0px;
     background-color: rgb(255,159,0);
     border-radius: 10px;
     color: white;
+}
+
+.box{
+overflow: hidden;
+}
+
+.box img{
+  transition:  all ease 2s;
+}
+.box:hover img{
+  scale: 1.2;
+}
+
+.homebox{
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:10px;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.imgbox1 img{
+  width: 500px;
+  height: 500px;
 }

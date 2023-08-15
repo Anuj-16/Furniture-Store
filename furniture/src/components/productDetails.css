@@ -34,3 +34,23 @@
   background-color: #fb641b ;
   border: none;
 }
+.title{
+  color: blue;
+  margin-bottom: 10px;
+}
+.price{
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.imgBox{
+  padding-right: 50px;
+
+
+}
+.imgBox img{
+  transition:  all ease 2s;
+}
+.imgBox:hover img{
+  scale: 1.2;
+}
+

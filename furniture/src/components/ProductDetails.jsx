@@ -5,7 +5,7 @@ import "./productDetails.css"
 import { AuthContent } from '../AuthContent/AuthContentProvider';
 
 function ProductDetails() {
-    const { imgChair,setImgChair } = useContext(AuthContent);
+    const { imgChair,setImgChair,store, setStore} = useContext(AuthContent);
     const[dt,setDt]=useState("");
     const data=useParams();
 
@@ -22,21 +22,42 @@ function ProductDetails() {
     useEffect(()=>{
         GetData();
     },[]);
+  
+    const storeData=()=>{
+      if(store.length!==0){
+        let condi=store.filter((ele)=>{
+          return dt.title===ele.title
+      })
+      console.log(condi)
+      if(condi.length>=1){
+        alert("item is already in cart")
+      }
+      else{
+        setStore([...store,dt])
+      }
+  
+      }else{
+         setStore([...store,dt])
+      }
+  
+     
+    }
+    
   return (
     <div className='prodtData'>
-    <div style={{paddingRight:"50px"}} >
+    <div className='imgBox' >
        {imgChair?( <img  src={dt.img1} alt={dt.title} />):( <img  src={dt.img2} alt={dt.title} />)}
     </div>
     <div>
-        <h2 style={{color:"blue"}}>{dt.title}</h2>
+        <h2 className='title'>{dt.title}</h2>
         
-        <p style={{fontWeight:"700"}}>Price :₹ {dt.price}</p>
+        <p className='price'>Price :₹ {dt.price}</p>
        <p>{dt.decsription}</p>
        
         <button className='btn3' onClick={(e)=>setImgChair(true)}>colour-1</button>
         <button  className="btn3"onClick={(e)=>setImgChair(false)}>colour-2</button>
      <br />
-     <button className='AtC1' >Add to Card</button>
+     <button className='AtC1'onClick={storeData} >Add to Card</button>
      <button className='AtS1'>Buy Now</button>
     </div>
     </div>
