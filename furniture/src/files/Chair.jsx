@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../redux/action";
+import { filterVal, getData, priceFilter } from "../redux/action";
 import { AuthContent } from "../AuthContent/AuthContentProvider";
 import "../Product.css";
 import { Link } from "react-router-dom";
@@ -31,17 +31,26 @@ function Chair() {
     }else{
        setStore([...store,el])
     }
+}
 
+const filterData=(e)=>{
+  e.preventDefault()
+   
+    dispatch(filterVal("table",e.target.value))
+    
    
   }
-
-
+  const priceData =(e)=>{
+    e.preventDefault()
+     
+      dispatch(priceFilter("table",e.target.value))
+      }
   return (
     <div className="othermain1">
       <div className="othermain11">
         <label>
           Category :
-          <select className="filter-by-category">
+          <select className="filter-by-category"onChange={filterData}>
             <option value="">All Categories</option>
             <option value="office">Office</option>
             <option value="gamming">Gamming</option>
@@ -52,7 +61,7 @@ function Chair() {
         <br />
         <labe className="label2">
           Price Sorting :
-          <select className="sorting-by-category" >
+          <select className="sorting-by-category" onChange={priceData}>
             <option value="">All Soting</option>
             <option value="asc">Low to high</option>
             <option value="desc">High to low</option>

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FILTER_DATA, GET_DATA } from './actionType';
+import { FILTER_DATA, GET_DATA, PRICE_DATA } from './actionType';
 
 
 
@@ -18,7 +18,7 @@ try{
 
 }
 
-export const filterVal=(cate,name)=>async(dispatch)=>{
+export const filterVal=(cate,name,price)=>async(dispatch)=>{
     try{
       if(name){
         let result=await axios.get(`${urlData}?type=${name}`);
@@ -29,6 +29,22 @@ export const filterVal=(cate,name)=>async(dispatch)=>{
  
     dispatch({type:FILTER_DATA,payload:result.data})
       }
+           
+    }catch(err){}
+}
+export const priceFilter=(cate,price)=>async(dispatch)=>{
+    try{
+    
+        if(price){
+          let result=await axios.get(`${urlData}?_sort=price&_order=${price}&category=${cate}`);
+ 
+        dispatch({type:PRICE_DATA,payload:result.data});
+        }else{
+          let result=await axios.get(`${urlData}?&category=${cate}`);
+ 
+        dispatch({type:PRICE_DATA,payload:result.data});
+        }
+      
            
     }catch(err){}
 }
