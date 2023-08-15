@@ -50,7 +50,7 @@ const filterData=(e)=>{
   return (
     <div className="othermain1">
       <div className="othermain11">
-        <label style={{marginLeft:""}}>
+        <label className="lebal1">
           Category :
           <select className="filter-by-category"onChange={filterData}>
             <option value="">All Categories</option>

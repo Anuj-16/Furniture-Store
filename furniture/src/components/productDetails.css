@@ -44,7 +44,7 @@
 }
 .imgBox{
   padding-right: 50px;
-
+overflow-y: hidden;
 
 }
 .imgBox img{
@@ -53,4 +53,52 @@
 .imgBox:hover img{
   scale: 1.2;
 }
+
+@media only screen and (min-width: 883px) and (max-width: 1200px) {
+
+  .prodtData{
+    display: block;
+    margin: auto;
+  }
+
+
+  
+  }
+
+  @media only screen and (min-width: 720px) and (max-width: 883px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 300px;
+    }
+  
+    
+    }
+  @media only screen and (min-width: 575px) and (max-width: 720px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px;
+    }
+  
+    
+    }
+  @media only screen and (min-width: 200px) and (max-width: 575px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px
+    }
+  
+    
+    }
 
