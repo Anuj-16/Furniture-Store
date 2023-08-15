@@ -10,7 +10,6 @@ import {store} from "./redux/store"
 import AuthContentProvider from './AuthContent/AuthContentProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    
 <ChakraProvider>
 <AuthContentProvider>
 <Provider store={store}>
@@ -18,7 +17,6 @@ root.render(
 </Provider>
 </AuthContentProvider>
 </ChakraProvider>
-  
 );
 
 // If you want to start measuring performance in your app, pass a function

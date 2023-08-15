@@ -1,0 +1,120 @@
+.prodtData {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 70px;
+
+  text-align: initial;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn3 {
+  padding: 5px 20px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.btn3:hover {
+  background-color: rgb(22, 186, 227);
+  border: none;
+}
+
+.AtC1 {
+  padding: 15px 70px;
+  margin-right: 10px;
+  margin-top: 30px;
+  background-color: #ff9f00;
+  border: none;
+
+}
+.AtS1 {
+  padding: 15px 70px;
+  margin-right: 10px;
+  margin-top: 30px;
+  background-color: #fb641b ;
+  border: none;
+}
+.title{
+  color: blue;
+  margin-bottom: 10px;
+}
+.price{
+  font-weight: 700;
+  margin-bottom: 15px;
+  
+}
+.imgBox{
+  padding-right: 50px;
+
+}
+.imgBox img{
+  transition:  all ease 2s;
+}
+.imgBox:hover img{
+  scale: 1.2;
+}
+
+@media only screen and (min-width: 883px) and (max-width: 1200px) {
+
+  .prodtData{
+    display: block;
+    margin: auto;
+  }
+  .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
+
+  
+  }
+
+  @media only screen and (min-width: 720px) and (max-width: 883px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 300px;
+    }
+    .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
+    
+    }
+  @media only screen and (min-width: 575px) and (max-width: 720px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px;
+    }
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
+    
+    }
+  @media only screen and (min-width: 200px) and (max-width: 575px) {
+
+    .prodtData{
+      display: block;
+      margin: auto;
+    }
+    .imgBox img{
+     width: 200px
+    }
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
+    
+    }
+

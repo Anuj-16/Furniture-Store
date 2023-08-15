@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import './LogStyle.css'
 //import { useDispatch } from "react-redux";
 //import { useNavigate } from "react-router-dom";
 import axios from 'axios'
@@ -52,7 +53,7 @@ export const Signup = () => {
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
                 </div>
                 <div className="form-group anuj-form-group">
-                    <label className="anuj-label">Email</label>
+                    <label className="anuj-label">Email Id</label>
                     <input
                         type="email"
                         id="email"
