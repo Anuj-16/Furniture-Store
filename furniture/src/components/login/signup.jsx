@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Style1.css';
+import { AuthContent } from '../../AuthContent/AuthContentProvider';
+import { Link } from 'react-router-dom';
 
 export const SignUp = () => {
 
-    const[arr,setArr]=useState([])
+    const{arr,setArr,setCheck}=useContext(AuthContent)
     const[log,setLog]=useState({
       name:"",
       email:"",
@@ -21,7 +23,9 @@ export const SignUp = () => {
         alert("All ready register")
      }else{
         setArr([...arr,log])
+
         alert("Successfully")
+        setCheck(true);
      }
     }
     console.log(arr)
@@ -82,7 +86,7 @@ export const SignUp = () => {
           <input type="submit" value="Register"id="register"/>
         </div>
       </form>
-      Already a member? <a href="SignIn.html">SignIn</a>
+      Already a member? <Link style={{textDecoration:"none"}} to={"/login"}>Login</Link>
     </div>
   </div>
   )
