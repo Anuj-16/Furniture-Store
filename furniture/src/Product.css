@@ -5,7 +5,7 @@ body {
 .navTop {
   margin: auto;
   display: flex;
-  background-color: rgb(57, 144, 231);
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   justify-content: space-around;
   margin-top: 10px;

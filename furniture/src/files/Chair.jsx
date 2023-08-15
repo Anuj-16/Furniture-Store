@@ -81,7 +81,7 @@ const filterData=(e)=>{
                 <div className="box">
              {imgChair?(<img src={el.img1} alt={el.title} />):(<img src={el.img2} alt={el.title} />)}
              </div>
-              <h4 style={{ color: "blue" }}>{el.title}</h4>
+              <h4 style={{ color: "gray" }}>{el.title}</h4>
             </Link>
               <div className="showd">
             <p>Price: ₹ {el.price}</p>

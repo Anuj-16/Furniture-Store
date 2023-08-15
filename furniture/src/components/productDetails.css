@@ -41,10 +41,10 @@
 .price{
   font-weight: 700;
   margin-bottom: 15px;
+  
 }
 .imgBox{
   padding-right: 50px;
-overflow-y: hidden;
 
 }
 .imgBox img{
@@ -60,7 +60,11 @@ overflow-y: hidden;
     display: block;
     margin: auto;
   }
-
+  .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
 
   
   }
