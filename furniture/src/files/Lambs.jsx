@@ -50,12 +50,12 @@ const filterData=(e)=>{
   return (
     <div className="othermain1">
       <div className="othermain11">
-        <label style={{marginLeft:""}}>
+        <label className="lebal1">
           Category :
           <select className="filter-by-category"onChange={filterData}>
             <option value="">All Categories</option>
             <option value="tablelamb">Table Lambs</option>
-            <option value="laptoptable">Night Light</option>
+            <option value="nightlight">Night Light</option>
             <option value="glasslight">Glass Light</option>
             <option value="roomlight">Room Light</option>
          

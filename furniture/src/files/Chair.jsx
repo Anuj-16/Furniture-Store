@@ -48,14 +48,14 @@ const filterData=(e)=>{
   return (
     <div className="othermain1">
       <div className="othermain11">
-        <label>
+        <label className="lebal1">
           Category :
           <select className="filter-by-category"onChange={filterData}>
             <option value="">All Categories</option>
             <option value="office">Office</option>
             <option value="gamming">Gamming</option>
             <option value="outdoor">Outdoor Chair</option>
-            <option value="living">Living Room Chair</option>
+            <option value="living">Room Chair</option>
           </select>
         </label>
         <br />
