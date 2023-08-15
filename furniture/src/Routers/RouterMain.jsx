@@ -18,8 +18,6 @@ function RouterMain() {
     <Route path="/lambs"element={<Lambs/>}/>
     <Route path="/sofas"element={<Sofas/>}/>
     <Route path="/products/:id"element={<ProductDetails/>}/>
-
-   
    </Routes>
   )
 }

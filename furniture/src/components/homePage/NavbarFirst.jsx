@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Box,
   Flex,
@@ -18,9 +18,17 @@ Text
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { FaHeart, FaShoppingCart, FaShare, FaBars } from 'react-icons/fa';
+import { AuthContent } from '../../AuthContent/AuthContentProvider';
+
 
 function NavbarFirst() {
-  const [cartItemCount, setCartItemCount] = useState(5);
+
+
+  const {store}= useContext(AuthContent);
+ 
+  const NumberOfItem = store.length;
+  console.log(NumberOfItem);
+  const [cartItemCount, setCartItemCount] = useState(NumberOfItem);
 
   return (
     <Box
