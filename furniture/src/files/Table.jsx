@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterVal, getData } from "../redux/action";
+import { filterVal, getData, priceFilter } from "../redux/action";
 import { AuthContent } from "../AuthContent/AuthContentProvider";
 import "../Product.css";
 import { Link } from "react-router-dom";
 
 function Table() {
-    const { data, setData,imgChair,setImgChair,store,setStore,categ,setCateg } = useContext(AuthContent);
+    const { data, setData,imgChair,setImgChair,store,setStore,} = useContext(AuthContent);
     const dispatch = useDispatch();
     const { products } = useSelector((stre) => stre.reducer);
     setData(products);
@@ -39,22 +39,26 @@ function Table() {
   }
   
  const filterData=(e)=>{
-  // e.preventDefault();
-  setCateg(e.target.value)
-   dispatch(filterVal("table",categ))
-   
+ e.preventDefault()
+
+   dispatch(filterVal("table",e.target.value))
+  }
+ 
+ const priceData =(e)=>{
+ e.preventDefault()
   
- }
+   dispatch(priceFilter("table",e.target.value))
+   }
  
 
 
- console.log(categ)
+ 
     return (
       <div className="othermain1">
         <div className="othermain11">
           <label style={{marginLeft:""}}>
             Category :
-            <select className="filter-by-category" onChange={(e)=>filterData(e)}>
+            <select className="filter-by-category" onChange={filterData}>
               <option value="">All Categories</option>
               <option value="sidetable">Side Table</option>
               <option value="laptoptable">Laptop Table</option>
@@ -65,7 +69,7 @@ function Table() {
           <br />
           <labe className="label2">
             Price Sorting :
-            <select className="sorting-by-category" >
+            <select className="sorting-by-category" onChange={priceData}>
               <option value="">All Soting</option>
               <option value="asc">Low to high</option>
               <option value="desc">High to low</option>

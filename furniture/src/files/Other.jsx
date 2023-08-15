@@ -15,7 +15,7 @@ function Other() {
       id: 2,
       title:
         "Sofas items ",
-      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/sofa-sectional/o/c/u/symmetrical-96-5-black-201-chenille-no-70-sofa-berlin-3seater-original-imaghwb8kzyh42cp.jpeg?q=70",
+      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/sofa-sectional/s/y/i/right-facing-238-blue-gray-360-polyester-no-96-141-homeify-88-original-imaghw6xcgfcbmgb.jpeg?q=70",
       path:"/sofas"
     },
     {
@@ -36,7 +36,7 @@ function Other() {
       id: 5,
       title:
         "Chair items",
-      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/dining-chair/v/r/t/600-2-na-rosewood-sheesham-500-12-solid-sheesham-wood-original-imags42zgf8uazwx.jpeg?q=70",
+      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/office-study-chair/r/f/g/1-natural-fiber-58-4-pebble-mb-black-flk-green-soul-88-9-original-imagnz6ac6nufuut.jpeg?q=70",
       path:"/chair"
     },
     {
@@ -57,14 +57,21 @@ function Other() {
       id: 8,
       title:
         "Chairs Products ",
-      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/dining-chair/y/r/z/na-rosewood-sheesham-solid-sheesham-wood-handcrafted-original-imagk4amaawyaewj.jpeg?q=70",
+      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/outdoor-chair/i/a/b/48-6-pvc-polyvinyl-chloride-47-5-2-5-7758469-arlavya-89-brown-original-imagrg2uwhrrytsz.jpeg?q=70",
       path:"/chair"
     },
+    {
+      id: 9,
+      title:
+        "Tables items",
+      img1: "https://rukminim2.flixcart.com/image/416/416/xif0q/side-table/3/5/c/35-56-mdf-43-18-8-int-bdst-121-bedside-table-interos-55-88-original-imagrhcunvspgfhh.jpeg?q=70",
+      path:"/table"
+    }
   ];
   return( 
   <div className="homebox">
    {obj.map((el)=>(
-    <div >
+    <div className="box1">
       <Link style={{textDecoration:"none"}} to={el.path}>
       <div className="imgbox1">
         <img src={el.img1} alt={el.title} />
