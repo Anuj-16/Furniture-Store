@@ -74,7 +74,11 @@ overflow-y: hidden;
     .imgBox img{
      width: 300px;
     }
-  
+    .imgBox{
+    
+    overflow-y: hidden;
+    
+    }
     
     }
   @media only screen and (min-width: 575px) and (max-width: 720px) {
@@ -86,7 +90,11 @@ overflow-y: hidden;
     .imgBox img{
      width: 200px;
     }
-  
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
     
     }
   @media only screen and (min-width: 200px) and (max-width: 575px) {
@@ -98,7 +106,11 @@ overflow-y: hidden;
     .imgBox img{
      width: 200px
     }
-  
+    .imgBox{
+    
+      overflow-y: hidden;
+      
+      }
     
     }
 
