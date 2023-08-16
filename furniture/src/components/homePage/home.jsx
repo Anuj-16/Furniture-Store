@@ -5,7 +5,7 @@ import CaptionCarousel2 from './TopsaleTwoPic'
 import FourPicCarousel from './fourpic'
 import Footer from './footer'
 import SecondNav22 from "./navbar"
-function home() {
+function Home() {
   
   return (
     <div>
@@ -38,4 +38,4 @@ function home() {
   )
 }
 
-export default home;
+export default Home;

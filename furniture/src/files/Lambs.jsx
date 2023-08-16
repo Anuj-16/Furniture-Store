@@ -88,7 +88,7 @@ const filterData=(e)=>{
           </Link>
             <div className="showd">
           <p>Price: ₹ {el.price}</p>
-          <button className="btnAtC"onClick={(el)=>storeData(el)}><p>Add to Card</p></button>
+          <button className="btnAtC"onClick={()=>storeData(el)}><p>Add to Card</p></button>
          
           </div>
           </div>

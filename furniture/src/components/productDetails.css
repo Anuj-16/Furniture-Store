@@ -1,6 +1,6 @@
 .prodtData {
   display: flex;
-  width: 70%;
+  width: 90%;
   margin: auto;
   margin-top: 50px;
   padding: 70px;
@@ -13,6 +13,8 @@
   padding: 5px 20px;
   margin-top: 10px;
   margin-left: 5px;
+  background-color: chocolate;
+  border-radius: 8px;
 }
 .btn3:hover {
   background-color: rgb(22, 186, 227);
@@ -45,14 +47,22 @@
 }
 .imgBox{
   padding-right: 50px;
+  width:280%
 
 }
 .imgBox img{
   transition:  all ease 2s;
+
 }
 .imgBox:hover img{
   scale: 1.2;
 }
+/* @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+.imgBox{
+  width: 500%;
+}
+} */
+
 
 @media only screen and (min-width: 883px) and (max-width: 1200px) {
 
@@ -65,7 +75,7 @@
     overflow-y: hidden;
     
     }
-
+   
   
   }
 
@@ -117,4 +127,3 @@
       }
     
     }
-

@@ -15,22 +15,25 @@ function Chair() {
     dispatch(getData("chair"));
   }, [dispatch]);
 
-  const storeData=(el)=>{
-    if(store.length!==0){
-      let condi=store.filter((ele)=>{
-        return el.title===ele.title
-    })
-    console.log(condi)
-    if(condi.length>=1){
-      alert("item is already in cart")
-    }
-    else{
-      setStore([...store,el])
-    }
 
-    }else{
-       setStore([...store,el])
-    }
+const storeData=(el)=>{
+  if(store.length!==0){
+    let condi=store.filter((ele)=>{
+      return el.title===ele.title
+  })
+  console.log(condi)
+  if(condi.length>=1){
+    alert("item is already in cart")
+  }
+  else{
+    setStore([...store,el])
+  }
+
+  }else{
+     setStore([...store,el])
+  }
+
+ 
 }
 
 const filterData=(e)=>{
@@ -85,7 +88,7 @@ const filterData=(e)=>{
             </Link>
               <div className="showd">
             <p>Price: ₹ {el.price}</p>
-            <button className="btnAtC" onClick={(el)=>storeData(el)}>Add to Card</button>
+            <button className="btnAtC" onClick={()=>storeData(el)}>Add to Card</button>
             </div>
             </div>
           ))}

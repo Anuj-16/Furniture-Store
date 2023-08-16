@@ -27,6 +27,7 @@ e.preventDefault();
        }
       })
       setNamelogin(data2[0].name);
+      <Link to='/chair'></Link>
 
     }
     else{
@@ -37,6 +38,7 @@ e.preventDefault();
 console.log(namelogin)
   
   return (
+    <div className='body'>
     <div class="main_div">
     <div class="title">Login Form</div>
     <div class="social_icons">
@@ -70,6 +72,6 @@ console.log(namelogin)
       </div>
     </form>
   </div>
-
+  </div>
   )
 }

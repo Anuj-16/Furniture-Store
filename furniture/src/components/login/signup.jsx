@@ -32,6 +32,7 @@ export const SignUp = () => {
 
 
   return (
+    <div className='body'>
     <div class="container">
     <div class="title">Registration</div>
     <div class="content">
@@ -88,6 +89,7 @@ export const SignUp = () => {
       </form>
       Already a member? <Link style={{textDecoration:"none"}} to={"/login"}>Login</Link>
     </div>
+  </div>
   </div>
   )
 }
