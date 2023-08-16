@@ -1,17 +1,65 @@
-import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, Box, Button, Flex, FormControl, FormLabel, Grid, Input, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, useDisclosure } from "@chakra-ui/react";
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, Box, Button, Flex, FormControl, FormLabel, Grid, Input, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, useDisclosure, useToast } from "@chakra-ui/react";
 import { Heading, Container } from '@chakra-ui/react'
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from 'react-router-dom'
+import { cartTotal, userInfor } from "../../redux/action";
+import { AuthContent } from "../../AuthContent/AuthContentProvider";
 function Payment() {
-    let [state, setState] = useState('')
+    const [promo, setPromo] = useState("")
+    let navigate=useNavigate();
     let [price, setPrice] = useState(2000)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const toast = useToast()
+    const [info, setInfo] = useState({
+        lname: '',
+        fname: '',
+        phone: '',
+        email: ''
+      })
+      const [cartItems, setCartItems] = useState([]);
+      let dispatch=useDispatch();
+      let {store,setStore,imgChair,total,setTotal}=useContext(AuthContent);
+      
+      
 
-    let handlepromo=()=>{
-        if(state==="masai30"){
-            let change=(price*3)/10;
-            
+      const handleClick = () => {
+        dispatch(userInfor(info))
+        setInfo({ ...info, lname: '', fname: '', phone: '', email: '' })
+    navigate('/Delivery')
+      }
+      const handleApply = () => {
+        if (promo === "pankaj40") {
+            let val = total * 0.4; 
+            let afterPromo = Math.floor(total - val);
+            setTotal(afterPromo);
+            toast({
+              title: 'promo aplied',
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })
+          }
+          else if (promo === "masai60") {
+            let val = total * 0.4; 
+            let afterPromo = Math.floor(total - val);
+            console.log(afterPromo);
+            setTotal(afterPromo); 
+            toast({
+              title: 'promo aplied',
+              status: 'success',
+              duration: 9000,
+              isClosable: true,
+            })
+          }
+          
+          setPromo('');
+      
+  
+        
         }
-    }
+
+ 
     return <Box background="rgb(242,242,242)"  padding= "20px" >
 
         <Box width= "80%" margin= "auto" >
@@ -24,12 +72,10 @@ function Payment() {
                         <Grid   templateColumns="repeat(2,1fr)" gap="40px">
                             <Box >
                                 <FormControl isRequired>
-                                    <Input mt={10} placeholder='Last name' />
-                                    <Input mt={10} placeholder='First name' />
-                                    <NumberInput max={10} min={9}>
-                                        <NumberInputField mt={10} placeholder="Phone" />
-                                    </NumberInput>
-                                    <Input mt={10} type="email" placeholder='Email' />
+                                    <Input mt={10} name="lname" placeholder='Last name' value={info.fname} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })}/>
+                                    <Input mt={10} name="fname" placeholder='First name' value={info.lname} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
+                                     <Input mt={10} name='phone' placeholder="Phone" type="number" value={info.phone} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })}/>
+                                    <Input mt={10} name='email' type="email" placeholder='Email' value={info.email} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
                                 </FormControl>
                             </Box>
 
@@ -41,33 +87,21 @@ function Payment() {
                                             <FormControl isRequired>
                                             <Input mt={10} w="400px" placeholder="Promo Code"  onChange={(e) => {
                                                 {
-                                                    setState(e.target.value)
-                                                    console.log(state)
+                                                    setPromo(e.target.value)
+                                                    console.log(promo)
                                                 }
                                             }} />
                                             </FormControl>
                                             
                                         </Box>
                                         <Box>
-                                            <AlertDialog>
-                                            <AlertDialogContent>
-                                                <AlertDialogHeader>
-                                                    Applied promocode
-                                                </AlertDialogHeader>
-                                                <AlertDialogBody>You have Got 30%</AlertDialogBody>
-                                                <AlertDialogFooter>
-                                                    <Button >Ok</Button>
-                                                </AlertDialogFooter>
-                                            
-                                            </AlertDialogContent>
-                                            </AlertDialog>
-                                            <Button colorScheme='yellow' mt={10} onClick={handlepromo}>Apply</Button>
+                                            <Button colorScheme='yellow' mt={10} onClick={handleApply}>Apply</Button>
                                             </Box>
                                     </Flex>
                                 </FormControl>
-                                <Heading mt="208px" mb={35} size="md">Total  __________________________________________  ${price}</Heading>
+                                <Heading mt="208px" mb={35} size="md">Total  __________________________________________ ${total ? total : "0"}</Heading>
                                 <Box mt="60px">
-                                    <Button colorScheme="red" mr="60px" float={"right"}>Next Step</Button>
+                                    <Button colorScheme="red" mr="60px" float={"right"} onClick={handleClick} >Next Step</Button>
                                 </Box>
                             </Box>
                         </Grid>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import "./productDetails.css"
 import { AuthContent } from '../AuthContent/AuthContentProvider';
 
@@ -58,7 +58,9 @@ function ProductDetails() {
         <button  className="btn3"onClick={(e)=>setImgChair(false)}>colour-2</button>
      <br />
      <button className='AtC1'onClick={storeData} >Add to Card</button>
+     <Link to="/delivery">
      <button className='AtS1'>Buy Now</button>
+     </Link>
     </div>
     </div>
   )

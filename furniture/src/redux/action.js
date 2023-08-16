@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FILTER_DATA, GET_DATA, PRICE_DATA } from './actionType';
+import { CART_TOTAL, FILTER_DATA, GET_DATA, PAYMENT_INFO, PRICE_DATA, USER_INFO } from './actionType';
 
 
 
@@ -47,4 +47,29 @@ export const priceFilter=(cate,price)=>async(dispatch)=>{
       
            
     }catch(err){}
+}
+export const cartTotal=(payload)=>{
+  return{
+      type:CART_TOTAL,
+          payload,
+      
+  }
+}
+
+export const removeFromCart = (id) => (dispatch) => {
+  axios.delete(`${urlData}/${id}`)
+  dispatch(getData());
+}
+
+export const userInfor=(payload)=>{
+  return{
+      type:USER_INFO,
+      payload,
+  }
+}
+export const storePaymentInfo=(payload)=>{
+  return{
+      type:PAYMENT_INFO,
+      payload,
+  }
 }
