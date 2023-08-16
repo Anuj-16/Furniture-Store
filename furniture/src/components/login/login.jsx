@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import './Style.css';
+// import './Style.css';
 import { AuthContent } from '../../AuthContent/AuthContentProvider';
 import { Link } from 'react-router-dom';
 
