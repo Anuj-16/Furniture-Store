@@ -24,7 +24,7 @@ import { AuthContent } from '../../AuthContent/AuthContentProvider';
 function NavbarFirst() {
 
 
-  const {store}= useContext(AuthContent);
+  const {store,namelogin}= useContext(AuthContent);
  
   const NumberOfItem = store.length;
   console.log(NumberOfItem);
@@ -140,8 +140,9 @@ function NavbarFirst() {
             </MenuList>
           </Menu>
         </Tooltip>
+        
         <Button colorScheme="blue" size="md" width="50%"  bg='#f79525'>
-      Login
+          {namelogin!="" ? Login : {namelogin}}
     </Button>
       </Flex>
     </Box>
